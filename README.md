@@ -2,7 +2,7 @@
 
 ## Team Names:
 - Hosea Nacanaynay | GitHub: sodatax
-- name | GitHub: 
+- Pavlo Tkach | GitHub: BROSKIs
 - name | GitHub: 
 
 ## What is Palm Garden?
