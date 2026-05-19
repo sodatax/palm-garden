@@ -1,6 +1,6 @@
 # Palm Garden
 
-## Team Names:
+## Team PALM:
 - Hosea Nacanaynay | GitHub: sodatax
 - Pavlo Tkach | GitHub: BROSKIs
 - name | GitHub: 
