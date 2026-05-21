@@ -5,8 +5,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: example_api
-      MYSQL_USER: appuser
-      MYSQL_PASSWORD: apppassword
+      MYSQL_USER: appuser # DO NOT USE THIS USE "palm"
+      MYSQL_PASSWORD: apppassword # DO NOT USE THIS USE "p@lmg@rd3n"
     volumes:
       - c:/mysql-data:/var/lib/mysql
     ports:
