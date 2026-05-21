@@ -1,0 +1,57 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    background-color: rgb(44, 44, 44);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.sale{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.store-container{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+a:hover{
+    color: grey;
+}
+
+footer{
+    color:white;
+    display:flex;
+    background-color: rgb(44, 44, 44);
+    justify-content: center;
+    
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
