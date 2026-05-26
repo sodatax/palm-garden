@@ -26,7 +26,16 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
+
+    img{
+        width: 100%;
+    }
+}
+
+#item-card{
+    padding: 3rem;
+    background-color: rgb(143, 142, 142);
+    border-radius: 1rem;
 }
 
 .store-container{
@@ -34,6 +43,17 @@ nav{
     justify-content: space-evenly;
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description-item{
+    margin: 0;
+    padding: .35rem;
 }
 
 a:hover{
