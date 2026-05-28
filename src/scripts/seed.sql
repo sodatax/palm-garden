@@ -1,4 +1,4 @@
-INSERT INTO garden_products (product_name, price, description, category) VALUES
+INSERT INTO products (product_name, price, description, category) VALUES
 (
     'Forged Steel Hand Trowel',
     14.99,
