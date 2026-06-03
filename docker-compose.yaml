@@ -4,9 +4,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: example_api # Database is called "garden_products" instead of example_api
-      MYSQL_USER: appuser # DO NOT USE THIS USE "palm"
-      MYSQL_PASSWORD: apppassword # DO NOT USE THIS USE "p@lmg@rd3n"
+      MYSQL_DATABASE: example_api # Ignore this
+      MYSQL_USER: appuser # Everyone else - appuser, BushyMustache - palm
+      MYSQL_PASSWORD: apppassword # Everyone else - apppassword, BushyMustache - p@lmg@rd3n
     volumes:
       - c:/mysql-data:/var/lib/mysql
     ports:
