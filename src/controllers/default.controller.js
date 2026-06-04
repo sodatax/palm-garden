@@ -37,26 +37,3 @@ export const getProductsWithFilters = async (req, res) => {
         data: results
     });
 }
-
-
-export const getProductsByCategory = async (req, res) => {
-    let results = await getAll();
-    const { category } = req.query;
-
-    if (category) {
-        const categories = req.query.category?.split(',');
-        results = results.filter(pro => categories.include(pro.category));
-    }
-
-    if (results.length === 0) {
-        return res.status(404).json({
-            count: 0,
-            data: []
-        });
-    }
-
-    return res.status(200).json({
-        count: results.length,
-        data: results
-    });
-}
