@@ -1,5 +1,6 @@
 import express from 'express';
 import defaultRouter from './routers/default.routes.js';
+import productRouter from './routers/products.routes.js';
 
 //configure Express.js app
 const app = express();
@@ -17,5 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 
 //routers
 app.use("/", defaultRouter);
+app.use("/api/products", productRouter);
 
 export default app;
