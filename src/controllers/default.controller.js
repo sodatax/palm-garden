@@ -37,3 +37,8 @@ export const getProductsWithFilters = async (req, res) => {
         data: results
     });
 }
+
+export const getProductsPage = async (req, res) => {
+  const products = await getAll();
+  res.render("products", { products });
+};
