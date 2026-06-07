@@ -13,30 +13,14 @@
     <script src="/js/products.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/products">Shop</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <%- include('./partials/nav.ejs') %>
 
     <section id="products-grid">
         <!-- load products in -->
     </section>
 
-    <footer>
-        <p>Thank you for visitng Palm Garden.</p>
-        <p>We strive to provide the best experiance, if you found any issues please visit our Contact Page, or email support@palmgarden.com</p>
-        <ul>
-            <li><a href="https://github.com/sodatax/palm-garden">GitHub</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="/account">Account</a></li>
-        </ul>
-    </footer>
+    <%- include('./partials/footer.ejs') %>
 
 </body>
 </html>
