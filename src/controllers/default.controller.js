@@ -42,3 +42,9 @@ export const getProductsPage = async (req, res) => {
   const products = await getAll();
   res.render("products", { products });
 };
+
+export const getSingleProductPage = async (req, res) => {
+    const id = Number(req.params.id);
+    const product = await getProductById(id);
+    res.render("singleProductPage", { product });
+}

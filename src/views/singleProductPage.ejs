@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/single.css">
+
+
+    <!-- Scripts -->
+    <script src="/js/products.js" defer></script>
+</head>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <section id="single-product-main">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLDP5s2j9u1x86fOb7kNKXanJeMn8zZ30ZQ&s" alt="immage not found" width="200px">
+        <div class="single-description">
+            <h3 class="single-name-item"><%= product.product_name %></h3>
+            <h2 class="single-price-item">$<%= product.price %></h2>
+            <p class="single-description-item"><%= product.description %></p>
+            <button class="single-description-item"><%= product.category %></button>
+        </div>
+    </section>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
