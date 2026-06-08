@@ -45,6 +45,6 @@ export const getProductsPage = async (req, res) => {
 
 export const getSingleProductPage = async (req, res) => {
     const id = Number(req.params.id);
-    const product = await getProductById(id);
+    const product = await getById(id);
     res.render("singleProductPage", { product });
 }

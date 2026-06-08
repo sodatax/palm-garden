@@ -19,7 +19,7 @@ export const getById = async (id) => {
             "SELECT id, product_name, price, description, category FROM products WHERE id = ?", [Number(id)]
         );
 
-        return result;
+        return result[0];
     } catch (err) {
         console.error("MYSQL ERROR:", err);
         throw err;
