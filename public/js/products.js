@@ -22,14 +22,17 @@ function showProducts(productList) {
 
 function addProductCard(product) {
   const grid = document.querySelector("#products-grid");
-  const { product_name, price, description, category } = product;
+  const { product_name, price, description, category, id } = product;
 
-  const [div, h2, pCategory, pPrice, pDesc] =
-    createElements(["div", "h2", "p", "p", "p"]);
+  const [div, a, h2, pCategory, pPrice, pDesc] =
+      createElements(["div", "a", "h2", "p", "p", "p"]);
 
   div.id = slugify(product_name);
   div.className = "product-card";
+
+  a.href = `/products/${id}`;
   h2.textContent = product_name;
+
   pCategory.className = "category";
   pCategory.textContent = category;
   pPrice.className = "price";
@@ -37,7 +40,8 @@ function addProductCard(product) {
   pDesc.className = "description";
   pDesc.textContent = description;
 
-  appendAll(div, [h2, pCategory, pPrice, pDesc]);
+  a.appendChild(h2);
+  appendAll(div, [a, pCategory, pPrice, pDesc]);
   grid.appendChild(div);
 }
 
