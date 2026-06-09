@@ -22,7 +22,7 @@ Palm Garden is an ecommerce platform focused on plants and gardening tools.
 ## Filtering
 - Filters are applied via query parameters on the `/api/products` endpoint
 - `price` filters to products at or above the specified minimum price
-- `category` accepts one or more comma-separated values (e.g. `hand tools,watering equipment`) and is case-insensitive
+- `category` accepts one or more values (e.g. `handtool, watering`) and is case-insensitive
 - Both filters can be combined in a single request
 
 ## Setup
