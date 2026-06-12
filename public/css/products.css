@@ -41,3 +41,17 @@
 a{
     color: black;
 }
+
+#filters{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.25rem;
+    gap: 1rem;
+    .filter{
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding:.75rem;
+        width: 25%;
+    }
+    
+}
