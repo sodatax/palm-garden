@@ -11,15 +11,28 @@
     <link rel="stylesheet" href="/css/common.css">
 
     <!-- Scripts -->
+    <script> const products = <%- JSON.stringify(products); %> </script> <!-- shows as "expression expired" but should work fine still -->
     <script src="/js/products.js" defer></script>
 </head>
 <body>
 
     <%- include('./partials/nav.ejs') %>
 
-    <section id="products-grid">
-        <!-- load products in -->
-    </section>
+    <main>
+        <div id="filters">
+            <select id="filter-category">
+                <option value="">All Categories</option>
+                <option value="hand tools">Hand Tools</option>
+                <option value="watering equipment">Watering Equipment</option>
+                <option value="garden equipment">Garden Equipment</option>
+            </select>
+            <input type="number" id="filter-price" placeholder="Min price" min="0" />
+        </div>
+
+        <section id="products-grid">
+            <!-- load products in -->
+        </section>
+    </main>
 
     <%- include('./partials/footer.ejs') %>
 

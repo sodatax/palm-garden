@@ -25,3 +25,27 @@ export const getById = async (id) => {
         throw err;
     }
 }
+
+export const getFiltered = async ({ price, category }) => {
+    try {
+        let query = "SELECT * FROM products WHERE 1=1";
+        const params = [];
+
+        if (price) {
+            query += " AND price >= ?";
+            params.push(Number(price));
+        }
+
+        if (category) {
+            const categories = category.split(',');
+            query += ` AND LOWER(category) IN (${categories.map(() => '?').join(',')})`;
+            params.push(...categories.map(c => c.toLowerCase()));
+        }
+
+        const [results] = await db.query(query, params);
+        return results;
+    } catch (err) {
+        console.error("MYSQL ERROR:", err);
+        throw err;
+    }
+}

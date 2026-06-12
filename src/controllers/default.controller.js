@@ -1,4 +1,4 @@
-import { getAll, getById } from "../services/default.service.js";
+import { getAll, getById, getFiltered } from "../services/default.service.js";
 
 export const getProductById = async (req, res) => {
     const { id } = req.params;
@@ -13,35 +13,31 @@ export const getProductById = async (req, res) => {
 }
 
 export const getProductsWithFilters = async (req, res) => {
-    let results = await getAll();
     const { price, category } = req.query;
-
-    if (price) {
-        results = results.filter(pro => pro.price >= Number(price));
-    }
-
-    if (category) {
-        const categories = req.query.category?.split(',');
-        results = results.filter(pro => categories.includes(String(pro.category).toLowerCase()));
-    }
+    const results = await getFiltered({ price, category });
 
     if (results.length === 0) {
-        return res.status(404).json({
-            count: 0,
-            data: []
-        });
+        return res.status(404).json({ count: 0, data: [] });
     }
 
-    return res.status(200).json({
-        count: results.length,
-        data: results
-    });
+    return res.status(200).json({ count: results.length, data: results });
 }
 
 export const getProductsPage = async (req, res) => {
-  const products = await getAll();
-  res.render("products", { products });
-};
+    let products = await getAll();
+    const { price, category } = req.query;
+
+    if (price) {
+        products = products.filter(pro => pro.price >= Number(price));
+    }
+
+    if (category) {
+        const categories = category.split(',').map(c => c.toLowerCase());
+        products = products.filter(pro => categories.includes(String(pro.category).toLowerCase()));
+    }
+
+    res.render("products", { products });
+}
 
 export const getSingleProductPage = async (req, res) => {
     const id = Number(req.params.id);

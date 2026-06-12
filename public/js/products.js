@@ -1,13 +1,31 @@
+const grid = document.querySelector("#products-grid");
+
 loadProducts();
 
-async function loadProducts() {
-  const response = await fetch("/api/products");
-  if (response.ok) {
-    const { data } = await response.json();
-    showProducts(data);
-  } else {
-    showError();
-  }
+document.querySelector("#filter-category").onchange = fetchFiltered;
+document.querySelector("#filter-price").oninput = fetchFiltered;
+
+function loadProducts() {
+    showProducts(products);
+}
+
+async function fetchFiltered() {
+    const category = document.querySelector("#filter-category").value;
+    const price = document.querySelector("#filter-price").value;
+
+    const params = new URLSearchParams();
+    if (category) params.append("category", category);
+    if (price) params.append("price", price);
+
+    const response = await fetch(`/api/products?${params}`);
+
+    if (response.ok) {
+        const { data } = await response.json();
+        grid.innerHTML = "";
+        showProducts(data);
+    } else {
+        grid.innerHTML = "";
+    }
 }
 
 function showError() {
