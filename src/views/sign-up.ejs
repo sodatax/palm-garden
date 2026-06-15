@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/auth-pages.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <title>Palm Garden - Sign Up</title>
+</head>
+<body>
+    <!-- HEADER INSERTION -->
+     <%- include('./partials/nav.ejs') %>
+
+    <main id="main-body">
+        <section>
+            <form method="post">
+                <!-- First Name -->
+                <label for="fname" id="fname-label">First Name</label>
+                <input type="text" name="fname" id="fname" required>
+                <!-- Last Name -->
+                <label for="lname" id="lname-label">Last Name</label>
+                <input type="text" name="lname" id="lname" required>
+                <!-- Email -->
+                <label for="email-input" id="email-label">Email</label>
+                <input type="email" name="email-input" id="email-input" required>
+                <!-- Password -->
+                <label for="pass-input" id="pass-label">Password</label>
+                <input type="password" name="pass-input" id="pass-input" required>
+                <!-- Submit Button -->
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER INSERTION -->
+</body>
+</html>

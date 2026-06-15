@@ -44,3 +44,15 @@ export const getSingleProductPage = async (req, res) => {
     const product = await getById(id);
     res.render("singleProductPage", { product });
 }
+
+export const getLoginPage = (req, res) => {
+    res.render("login");
+}
+
+export const getSignUpPage = (req, res) => {
+    res.render("sign-up");
+}
+
+export const getHomePage = (req, res) => {
+    res.render("home");
+}
