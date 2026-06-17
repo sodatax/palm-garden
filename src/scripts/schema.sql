@@ -7,3 +7,10 @@ CREATE TABLE products (
     description TEXT,
     category VARCHAR(100)
 );
+
+CREATE TABLE users (
+    userId INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
