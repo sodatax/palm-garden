@@ -56,3 +56,7 @@ export const getSignUpPage = (req, res) => {
 export const getHomePage = (req, res) => {
     res.render("home");
 }
+
+export const getHomeUserPage = (req, res) => {
+    res.render("home-user");
+}

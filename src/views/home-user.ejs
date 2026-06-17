@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Garden - Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+    <%- include('./partials/nav-user.ejs') %>
+
+    <main>
+        <!-- Special section -->
+        <div id="special">
+            <!-- special curent maybe no need for second div -->
+            <div class="sale">
+                <h3>Only $67 TODAY</h3>
+                <button>Buy Now</button>
+            </div>
+        </div>
+        <!-- Store Grid -->
+        <div class="store-container">
+            <!-- Item -->
+            <div id="item-card">
+                <img src="https://lh5.googleusercontent.com/proxy/ouoluL4Y7m7RAVEvCQHX1s7t8-uLyKCWXLoDVju8yAiTF9JrOQad4vW9lXiJbD0knDBV7H3Po8QG2Vk6Nos" alt="" width="200px">
+                <div class="description">
+                    <h3 class="description-item">Name</h3>
+                    <h2 class="description-item">$123</h2>
+                    <p class="description-item">A bit of description...</p>
+                    <button class="description-item">Buy</button>
+                </div>
+            </div>
+            <div id="item-card">
+                <img src="https://lh5.googleusercontent.com/proxy/ouoluL4Y7m7RAVEvCQHX1s7t8-uLyKCWXLoDVju8yAiTF9JrOQad4vW9lXiJbD0knDBV7H3Po8QG2Vk6Nos" alt="" width="200px">
+                <div class="description">
+                    <h3 class="description-item">Name</h3>
+                    <h2 class="description-item">$123</h2>
+                    <p class="description-item">A bit of description...</p>
+                    <button class="description-item">Buy</button>
+                </div>
+            </div>
+            <div id="item-card">
+                <img src="https://lh5.googleusercontent.com/proxy/ouoluL4Y7m7RAVEvCQHX1s7t8-uLyKCWXLoDVju8yAiTF9JrOQad4vW9lXiJbD0knDBV7H3Po8QG2Vk6Nos" alt="" width="200px">
+                <div class="description">
+                    <h3 class="description-item">Name</h3>
+                    <h2 class="description-item">$123</h2>
+                    <p class="description-item">A bit of description...</p>
+                    <button class="description-item">Buy</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <%- include('./partials/footer.ejs') %>
+    
+</body>
+</html>
