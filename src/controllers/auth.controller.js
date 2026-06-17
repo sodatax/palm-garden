@@ -15,29 +15,29 @@ const registerPage = (req, res) => {
 };
 
 const register = async (req, res) => {
-    const { username, password, confirm } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password || !confirm) {
+    if (!email || !password) {
         return res.redirect("/register?errors=All fields required");
     }
 
-    if (password !== confirm) {
-        return res.redirect("/register?errors=Passwords do not match");
-    }
+    // if (password) {
+    //     return res.redirect("/register?errors=Passwords do not match");
+    // }
 
-    await createUser(username, password);
+    await createUser(email, password);
     return res.redirect("/login");
 };
 
 const login = async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password) {
+    if (!email || !password) {
         return res.redirect("/login?errors=All fields required");
     }
 
-    const user = await findUserByUsername(username);
-    if (!user) {
+    const user = await findUserByUsername(email);
+    if (!email) {
         return res.redirect("/login?errors=Invalid credentials");
     }
 
@@ -48,14 +48,14 @@ const login = async (req, res) => {
 
     req.session.user = {
         userId: user.userId,
-        username: user.username,
+        email: user.email,
     };
 
     return res.redirect("/home");
 };
 
 const isLoggedIn = (req, res, next) => {
-    if (!req.user) {
+    if (!req.email) {
         return res.redirect("/login?errors=Please log in first");
     }
     return next();

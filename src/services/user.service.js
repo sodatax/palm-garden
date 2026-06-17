@@ -6,16 +6,16 @@ export const hashPassword = async (plainPassword) => {
     return await bcrypt.hash(plainPassword, saltRounds);
 }
 
-export const findUserByUsername = async (username) => {
+export const findUserByUsername = async (email) => {
     const [results] = await db.query(
-        "SELECT userId, username, password, FROM users WHERE username = ? LIMIT 1",
-        [username]
+        "SELECT userId, email, password FROM users WHERE email = ? LIMIT 1",
+        [email]
     );
     return results[0];
 }
 
-export const createUser = async (username, plainPassword) => {
-    if (!username) throw new Error("Username is required.");
+export const createUser = async (email, plainPassword) => {
+    if (!email) throw new Error("Email is required.");
     if (!plainPassword) throw new Error("Password is required.");
 
     // hash the password before insert!
@@ -23,13 +23,13 @@ export const createUser = async (username, plainPassword) => {
 
     try {
         const [result] = await db.execute(
-            "INSERT INTO users (username, password) VALUES (?, ?)",
-            [username, passwordHash]
+            "INSERT INTO users (email, password) VALUES (?, ?)",
+            [email, passwordHash]
         );
 
         return {
             userId: result.insertId,
-            username,
+            email,
         };
     } catch (err) {
         console.error("MYSQL ERROR:", err);
