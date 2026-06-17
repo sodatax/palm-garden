@@ -1,10 +1,19 @@
 import { Router } from "express";
-import { getHomePage, getLoginPage, getSignUpPage } from "../controllers/default.controller.js";
+import authCtl from "../controllers/auth.contrroller.js";
+import { getHomePage } from "../controllers/default.controller.js";
 
 const router = Router();
 
 router.get("/", getHomePage);
-router.get("/login", getLoginPage);
-router.get("/register", getSignUpPage);
+
+router.get("/login", authCtl.loginPage);
+router.post("/login", authCtl.login);
+
+router.get("/register", authCtl.registerPage);
+router.post("/register", authCtl.register);
+
+router.get("/home", authCtl.isLoggedIn, getHomePage);
+
+router.get("/logout", authCtl.logout);
 
 export default router;

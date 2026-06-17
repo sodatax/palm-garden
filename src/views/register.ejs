@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/auth-pages.css">
     <link rel="stylesheet" href="/css/common.css">
-    <title>Palm Garden - Sign Up</title>
+    <title>Palm Garden - <%= title %></title>
 </head>
 <body>
      <%- include('./partials/nav.ejs') %>
@@ -13,6 +13,12 @@
     <main id="main-body">
         <section>
             <form method="post">
+                <h2>Register Page</h2>
+
+                <% if (errors) { %>
+                    <p class="error"><%= errors %></p>
+                <% } %>
+                
                 <!-- First Name -->
                 <label for="fname" id="fname-label">First Name</label>
                 <input type="text" name="fname" id="fname" required>

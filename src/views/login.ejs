@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/auth-pages.css">
     <link rel="stylesheet" href="/css/common.css">
-    <title>Palm Garden - Login</title>
+    <title>Palm Garden - <%= title %></title>
 </head>
 <body>
     
@@ -14,6 +14,12 @@
     <main id="main-body">
         <section>
             <form method="post">
+                <h2>Login Page</h2>
+
+                <% if (errors) { %>
+                    <p class="error"><%= errors %></p>
+                <% } %>
+                
                 <!-- Email -->
                 <label for="email-input" id="email-label">Email</label>
                 <input type="email" name="email-input" id="email-input" required>
