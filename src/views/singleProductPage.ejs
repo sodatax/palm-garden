@@ -13,10 +13,11 @@
 
     <!-- Scripts -->
     <script src="/js/products.js" defer></script>
+    <script src="/js/cart.js" defer></script>
 </head>
 <body>
 
-    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/nav-cart.ejs') %>
     <main>
         <section id="single-product-main">
             <a href="/products">Back</a>
@@ -26,6 +27,7 @@
                 <h2 class="single-price-item">$<%= product.price %></h2>
                 <p class="single-description-item"><%= product.description %></p>
                 <button class="single-description-item"><%= product.category %></button>
+                <button onclick="addToCart(<%= product.id %>, '<%= product.product_name %>', <%= product.price %>)">Add to Cart</button>
             </div>
         </section>
     </main>

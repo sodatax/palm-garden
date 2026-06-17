@@ -42,8 +42,8 @@ function addProductCard(product) {
   const grid = document.querySelector("#products-grid");
   const { product_name, price, description, category, id } = product;
 
-  const [div, a, h2, pCategory, pPrice, pDesc] =
-      createElements(["div", "a", "h2", "p", "p", "p"]);
+  const [div, a, h2, pCategory, pPrice, pDesc, btnCart] =
+    createElements(["div", "a", "h2", "p", "p", "p", "button"]);
 
   div.id = slugify(product_name);
   div.className = "product-card";
@@ -58,8 +58,11 @@ function addProductCard(product) {
   pDesc.className = "description";
   pDesc.textContent = description;
 
+  btnCart.textContent = "Add to Cart";
+  btnCart.onclick = () => addToCart(id, product_name, price);
+
   a.appendChild(h2);
-  appendAll(div, [a, pCategory, pPrice, pDesc]);
+  appendAll(div, [a, pCategory, pPrice, pDesc, btnCart]);
   grid.appendChild(div);
 }
 

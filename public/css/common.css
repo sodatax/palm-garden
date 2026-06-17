@@ -35,6 +35,14 @@ nav{
         font-weight: bold;
         text-decoration: none;
     }
+
+    .nav-cart {
+        padding-right: 2rem;
+        justify-self: end;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
 }
 
 footer{
@@ -58,6 +66,57 @@ a:hover{
     color: grey;
 }
 
+button:hover{
+    background-color: gray;
+    color: gray;
+}
+
 a{
     text-decoration: none;
+}
+
+/* Cart CSS */
+.nav-cart {
+    position: relative;
+}
+
+#cart-toggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 100%;
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 280px;
+    z-index: 100;
+}
+
+.cart-dropdown.open {
+    display: block;
+}
+
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cart-dropdown ul a {
+    color: black;
 }
