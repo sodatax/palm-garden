@@ -62,7 +62,7 @@ const login = async (req, res) => {
 // };
 
 const logout = (req, res) => {
-    req.session.destroy(() => res.redirect("/login"));
+    req.session.destroy(() => res.redirect("/"));
 }
 
 export default { loginPage, registerPage, register, login, logout };

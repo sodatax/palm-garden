@@ -23,14 +23,6 @@ app.use(session({
 app.set("view engine", "ejs");
 app.set("views", "src/views");
 
-//temp user for building
-app.use((req, res, next) => {
-    if (!req.session.user) {
-        req.session.user = { id: 1, username: "testuser" };
-    }
-    next();
-});
-
 //static directories
 app.use(express.static('public'));
 
