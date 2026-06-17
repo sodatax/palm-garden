@@ -9,7 +9,7 @@ import cartRouter from './routers/cart.routes.js';
 const app = express();
 
 app.use(session({
-    secret: "6e092445-b4df-451c-837d-29934b81c1bd",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUnitialized: true,
     cookie: {
