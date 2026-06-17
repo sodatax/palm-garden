@@ -5,6 +5,6 @@ import { requireLogin } from "../middleware/auth.middleware.js";
 const router = Router();
 
 router.get("/", requireLogin, getProductsPage);
-router.get("/:id", getSingleProductPage);
+router.get("/:id", requireLogin, getSingleProductPage);
 
 export default router;
