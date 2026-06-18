@@ -16,7 +16,7 @@ export const getAll = async () => {
 export const getById = async (id) => {
     try {
         const [result] = await db.query(
-            "SELECT id, product_name, price, description, category FROM products WHERE id = ?", [Number(id)]
+            "SELECT id, product_name, price, description, category, image FROM products WHERE id = ?", [Number(id)]
         );
 
         return result[0];
