@@ -1,0 +1,224 @@
+{
+  "info": {
+    "_postman_id": "deb11b93-bdc9-448e-a465-99e79c60ca62",
+    "name": "Palm Garden Endpoints",
+    "description": "**Palm Garden is an ecommerce platform focused on gardening tools.**",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54271294",
+    "_collection_link": "https://go.postman.co/collection/54271294-deb11b93-bdc9-448e-a465-99e79c60ca62?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "User Authorized Endpoints",
+      "item": [
+        {
+          "name": "All products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8001/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "products"
+              ]
+            },
+            "description": "**This endpoint directs you to the products page, displaying all available products.**\n\n**Expected Response:**\n\n- **Directs you to the shop page**\n    \n- **Displays all available products**"
+          },
+          "response": []
+        },
+        {
+          "name": "Product by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8001/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "products",
+                "2"
+              ]
+            },
+            "description": "**This endpoint directs you to a page that displays a specific product by its ID.**\n\n**Expected Response:**\n\n- **Directs you to a product page with the specified id**"
+          },
+          "response": []
+        },
+        {
+          "name": "Product filtered by category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8001/products?category=hand tools&price=20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "hand tools"
+                },
+                {
+                  "key": "price",
+                  "value": "20",
+                  "type": "text"
+                }
+              ]
+            },
+            "description": "**This endpoint filters items by category and/or price using query parameters.**\n\n**Expected Response:**\n\n- **Displays items with the specified category**\n    \n- **Displays items with the specified minimum price**"
+          },
+          "response": []
+        },
+        {
+          "name": "Logout of an account",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8001/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "logout"
+              ]
+            },
+            "description": "**This endpoint destroys the session and logs you out of the current account.**\n\n**Expected Response:**\n\n- **Destroys the session**\n    \n- **Redirects you to the default home page**"
+          },
+          "response": []
+        },
+        {
+          "name": "User Home Page",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"temp@mail.com\",\r\n    \"password\": \"pass\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8001/home-user",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "home-user"
+              ]
+            },
+            "description": "**This endpoint is the default home page for users who ARE logged in.**\n\n**Expected Response:**\n\n- **Directs you to the users home page**"
+          },
+          "response": []
+        }
+      ],
+      "description": "**These endpoints require you to be logged in to access them.**\n\n**Please visit the \"Default Endpoints\" folder and run -** **`POST Login to an account`** **before running these endpoints.**"
+    },
+    {
+      "name": "Default Endpoints",
+      "item": [
+        {
+          "name": "Default Home Page",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"temp@mail.com\",\r\n    \"password\": \"pass\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8001/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                ""
+              ]
+            },
+            "description": "**This endpoint is the default home page for users who are NOT logged in.**\n\n**Expected Response:**\n\n- **Directs you to the home page**"
+          },
+          "response": []
+        },
+        {
+          "name": "Register Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8001/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "register"
+              ]
+            },
+            "description": "**This endpoint directs you to the register page in which you can register an account.**\n\n**Expected Response:**\n\n- **Directs you to the** **register** **page**"
+          },
+          "response": []
+        },
+        {
+          "name": "Login to an account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"temp@mail.com\",\r\n    \"password\": \"pass\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8001/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "login"
+              ]
+            },
+            "description": "**This endpoint directs you to the login page in which you can log into a registered account.**\n\n**Expected Response:**\n\n- **Directes you to login page**\n    \n\n**After form submission:**\n\n- **Redirects you to the** **/home-user** **page.**"
+          },
+          "response": []
+        }
+      ],
+      "description": "These endpoints do NOT require you to be logged in to access them."
+    }
+  ]
+}

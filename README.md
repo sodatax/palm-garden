@@ -63,5 +63,15 @@ The cart is stored entirely in server-side session state under `req.session.cart
 - Run `npm install` to install dependencies
 - API is accessible at `http://localhost:8001/api/products`
 - Run the database seed script to populate products: `node src/scripts/seed.js`
-- Start the server with `npm start`
+- Start the server with ` node src/server.js`
 - Visit `http://localhost:8001`
+
+## Published Documentation
+The Postman collection documentation has been published publicly.
+
+The link to the published documentation is included below:
+
+https://documenter.getpostman.com/view/54271294/2sBXwvH7rv
+
+## Exported Postman Collection
+The Postman collection has been exported in JSON format, named `Palm Garden Endpoints.postman_collection.json`, and committed to this repository.

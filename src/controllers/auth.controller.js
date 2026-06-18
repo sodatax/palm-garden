@@ -37,7 +37,7 @@ const login = async (req, res) => {
     }
 
     const user = await findUserByUsername(email);
-    if (!email) {
+    if (!user) {
         return res.redirect("/login?errors=Invalid credentials");
     }
 
@@ -53,13 +53,6 @@ const login = async (req, res) => {
 
     return res.redirect("/home-user");
 };
-
-// const isLoggedIn = (req, res, next) => {
-//     if (!req.email) {
-//         return res.redirect("/login?errors=Please log in first");
-//     }
-//     return next();
-// };
 
 const logout = (req, res) => {
     req.session.destroy(() => res.redirect("/"));
