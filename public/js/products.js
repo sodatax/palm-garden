@@ -49,7 +49,8 @@ function addProductCard(product) {
   div.className = "product-card";
   //Picture
   img.className = "product-image";
-  img.src = image;
+  //checking if the image is null
+  img.src = image !== null ? image : "/images/garden-tool-img/defult.png";
   //Link and Name
   a.href = `/products/${id}`;
   h2.textContent = product_name;
