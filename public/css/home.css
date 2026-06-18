@@ -52,11 +52,20 @@
     align-items: center;
 }
 .description{
-    padding-top: 1rem;
+    padding: 1rem;
 }
 .description-item{
     margin: 0;
     padding: .35rem;
+}
+
+.category-img{
+    width: calc(100% + 6rem);
+    height: 200px;
+    object-fit: cover;
+    margin-top: -3rem;
+    margin-left: -3rem;
+    margin-right: -3rem;
 }
 
 a{
