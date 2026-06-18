@@ -4,6 +4,11 @@ main{
     align-items: center;
 }
 
+a{
+    color: rgb(48, 48, 48);
+    padding: .35rem;
+}
+
 #main-body form{
     padding: 1.5rem;
     background-color: rgb(234, 234, 234);
