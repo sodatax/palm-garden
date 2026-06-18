@@ -55,3 +55,8 @@ a{
     }
     
 }
+
+.product-image{
+    height: 350px;
+    max-width: contain;
+}
