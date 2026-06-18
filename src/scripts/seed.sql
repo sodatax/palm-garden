@@ -117,5 +117,6 @@ INSERT INTO products (product_name, price, description, category) VALUES
     'Rain Gauge with Mounting Stake',
     11.49,
     'Outdoor rain gauge with durable plastic construction and ground stake mount.',
-    'Garden Equipment'
+    'Garden Equipment',
+    "/images/garden-tool-img/Rain-Gauge-with-Mounting-Stake.png"
 );

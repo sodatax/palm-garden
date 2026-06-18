@@ -40,7 +40,7 @@ function showProducts(productList) {
 
 function addProductCard(product) {
   const grid = document.querySelector("#products-grid");
-  const { product_name, price, description, category, id } = product;
+  const { product_name, price, description, category, id, image } = product;
 
   const [img, div, a, h2, pCategory, pPrice, pDesc, btnCart] =
     createElements(["img", "div", "a", "h2", "p", "p", "p", "button"]);
@@ -49,7 +49,7 @@ function addProductCard(product) {
   div.className = "product-card";
   //Picture
   img.className = "product-image";
-  img.src = "/images/garden-tool-img/defult.png";
+  img.src = image;
   //Link and Name
   a.href = `/products/${id}`;
   h2.textContent = product_name;
