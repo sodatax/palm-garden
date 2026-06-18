@@ -42,19 +42,24 @@ function addProductCard(product) {
   const grid = document.querySelector("#products-grid");
   const { product_name, price, description, category, id } = product;
 
-  const [div, a, h2, pCategory, pPrice, pDesc, btnCart] =
-    createElements(["div", "a", "h2", "p", "p", "p", "button"]);
-
+  const [img, div, a, h2, pCategory, pPrice, pDesc, btnCart] =
+    createElements(["img", "div", "a", "h2", "p", "p", "p", "button"]);
+  //Card
   div.id = slugify(product_name);
   div.className = "product-card";
-
+  //Picture
+  img.className = "product-image";
+  img.src = "/images/garden-tool-img/defult.png";
+  //Link and Name
   a.href = `/products/${id}`;
   h2.textContent = product_name;
-
+  //category
   pCategory.className = "category";
   pCategory.textContent = category;
+  //price
   pPrice.className = "price";
   pPrice.textContent = `$${parseFloat(price).toFixed(2)}`;
+  //description
   pDesc.className = "description";
   pDesc.textContent = description;
 
