@@ -67,7 +67,7 @@ function addProductCard(product) {
   btnCart.onclick = () => addToCart(id, product_name, price);
 
   a.appendChild(h2);
-  appendAll(div, [a, pCategory, pPrice, pDesc, btnCart]);
+  appendAll(div, [img, a, pCategory, pPrice, pDesc, btnCart]);
   grid.appendChild(div);
 }
 
