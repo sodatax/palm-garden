@@ -1,3 +1,9 @@
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #single-product-main {
   display: flex;
   gap: 30px;

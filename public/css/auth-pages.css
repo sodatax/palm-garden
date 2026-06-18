@@ -1,13 +1,12 @@
-#main-body section{
+main{
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 #main-body form{
     padding: 1.5rem;
-    background-color: rgb(143, 142, 142);
+    background-color: rgb(234, 234, 234);
     border-radius: 1rem;
     width: 30rem;
     max-width: 90%;
