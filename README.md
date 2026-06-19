@@ -61,8 +61,8 @@ The cart is stored entirely in server-side session state under `req.session.cart
 
 ## Setup
 - Run `npm install` to install dependencies
-- API is accessible at `http://localhost:8001/api/products`
-- Run the database seed script to populate products: `node src/scripts/seed.js`
+- In your database, run the schema script to create your tables: `src/scripts/schema.sql`
+- Additionally, run the seed script to populate your products table: `src/scripts/seed.sql`
 - Start the server with ` node src/server.js`
 - Visit `http://localhost:8001`
 
