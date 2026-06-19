@@ -5,7 +5,8 @@ CREATE TABLE products (
     product_name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     description TEXT,
-    category VARCHAR(100)
+    category VARCHAR(100),
+    image VARCHAR(500)
 );
 
 CREATE TABLE users (
